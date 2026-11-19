@@ -1,43 +1,37 @@
-package lt.vcd1;
+package lt.vcd2;
 
 
 public class Main {
     public static void main(String[] args) {
 
-        // Sukurti Point objekta
-        Point p1 = new Point(5, 3);
 
-        // Testuoti geterius
-        System.out.println("X: " + p1.getX());
-        System.out.println("Y: " + p1.getY());
+        Point p1 = new Point(2, 3);
+        Point p2 = new Point(6, 6);
 
-        // Testuoti distanceFromOrigin()
-        System.out.println("Distance from origin: "
-                + p1.distanceFromOrigin());
 
-        // Testuoti seterius
-        p1.setX(6);
-        p1.setY(4);
-        System.out.println("After setters: " + p1);
+        Line line1 = new Line(p1, p2);
 
-        // Testuoti translate()
-        p1.translate(2, 1);
-        System.out.println("After translation: " + p1);
+        System.out.println(line1);
 
-        // Sukurti kita taska
-        Point p2 = new Point(10, 8);
 
-        // Testuoti distance()
-        System.out.println("Distance between points: "
-                + p1.distance(p2));
+        System.out.println("Line length: " + line1.length());
 
-        // Testuoti setLocation()
-        p1.setLocation(1, 2);
-        System.out.println("After setLocation(): " + p1);
 
-        // Testuoti toString()
-        System.out.println("Point p1: " + p1);
-        System.out.println("Point p2: " + p2);
+        System.out.println("Starting point: " + line1.getP1());
+        System.out.println("Ending point: " + line1.getP2());
+
+
+        line1.setP1(new Point(1, 1));
+        line1.setP2(new Point(4, 5));
+
+        System.out.println("Updated line: " + line1);
+        System.out.println("Updated length: " + line1.length());
+
+
+        Line line2 = new Line();
+
+        System.out.println("Default line: " + line2);
+        System.out.println("Default length: " + line2.length());
     }
 }
 
